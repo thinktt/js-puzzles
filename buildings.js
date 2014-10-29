@@ -9,30 +9,49 @@ getRandomInt = function(min, max) {
 };
 
 
+
+
+
 for(i=0; i<10; i++) {
 	buildings.push(getRandomInt(1,10));
 }
 
 
+console.log(buildings);
+
+// while (buildings[buildings.length-1] < buildings[buildings.length-2]) {
+// 	buildings.pop();
+// }
 
 console.log(buildings);
 
+
 while(buildings.length > 0) {
 
-	while (buildings[0]<=buildings[1]) {
+	while (buildings[0] < buildings[1]) {
 		buildings.shift();
 	}
 
-	for(i=1; buildings[0] > buildings[i]; i++);
-	i++;
-	pool = buildings.slice(0, i); 
+	for(i=1; buildings[i] < buildings[0]; i++);
+	pool = buildings.slice(0, i+1); 
+
 	if(pool.length > 2) pools.push(pool);
 	buildings = buildings.slice(i);
 
 }
 
-console.log();
 console.log(pools);
+
+
+
+
+
+
+
+
+
+//console.log();
+//console.log(pools);
 
 
 
