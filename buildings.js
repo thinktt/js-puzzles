@@ -18,48 +18,49 @@ for(i=0; i<10; i++) {
 
 
 //............Main Code........................
-buildings = [ 5, 8, 7, 1, 7, 1, 7, 4, 6, 6 ];
+//buildings = [ 7, 3, 4, 6, 1, 5, 2, 5, 9 ];
 console.log(buildings);
 
-//find the first building that has a shorter building next to it
-//remove everythng before that in the process
-while (buildings[0] <= buildings[1]) {
-	buildings.shift();
+
+
+while(buildings.length > 0) {
+	//find the first building that has a shorter building next to it
+	//remove everythng before that in the process
+	while (buildings[0] <= buildings[1]) {
+		buildings.shift();
+	}
+
+	//if there are not at least 3 buildings left clear the
+	//array, there are no pools in this set
+	if(buildings.length < 3) buildings = [];
+
+	//console.log(buildings);
+
+	tallest = 1;
+
+	//find the tallest building to the right, but stop at the
+	//building equal or greater than the the left most building
+	for(i=2; i < buildings.length; i++) {
+		if(buildings[i] > buildings[tallest]) tallest = i;
+		if(buildings[i] >= buildings[0]) break;
+	}
+
+	//grab the pool set as long as there was a 
+	//third building found taller than the second building
+	if(tallest !== 1) pool = buildings.slice(0, tallest+1);
+	else pool = [];
+
+	//if there is anything in the pool add it to the 
+	//pool collection
+	if(pool.length > 0) pools.push(pool);
+
+	//remove the pool from the building set, but 
+	//leaving the right most building
+	buildings = buildings.slice(tallest);
 }
 
-//if there are not at least 3 buildings left clear the
-//array, there are no pools in this set
-if(buildings.length < 3) buildings = [];
+console.log(pools);
 
-console.log(buildings);
-
-tallest = 1;
-
-//find the tallest building to the right, but stop at the
-//building equal or greater than the the left most building
-for(i=2; i < buildings.length; i++) {
-	if(buildings[i] > buildings[tallest]) tallest = i;
-	if(buildings[i] >= buildings[0]) break;
-}
-
-//if the second building is equal to the tallest
-//then clear the array, there are no pools in the set
-//if(buildings[1] === buildings[tallest]) buildings = [];
-
-
-//grab the pool set 
-pool = buildings.slice(0, tallest+1); 
-
-//if there is anything in the pool add it to the 
-//pool collection
-if(pool.length > 0) pools.push(pool);
-
-//remove the pool from the building set, but 
-//leaving the right most building
-buildings = buildings.slice(tallest);
-
-console.log(pool);
-console.log(buildings);
 
 
 
