@@ -1,23 +1,6 @@
 
-//.........Build Some Random Buildings...................
-module.exports.makeBuildings = function() {
-	var getRandomInt, i,
-			buildings = [];
-
-	getRandomInt = function(min, max) {
-	  return Math.floor(Math.random() * (max - min)) + min;
-	};
-
-	for(i=0; i<10; i++) {
-		buildings.push(getRandomInt(1,10));
-	}
-
-
-};
-
-
 //............Get Water Module........................
-module.exports.getWater = (function() {
+module.exports = (function() {
 	var getPools, getPoolWater, getAllWater;
 
 	getPools = function(buildings) {
