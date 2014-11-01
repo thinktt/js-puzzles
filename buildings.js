@@ -20,12 +20,10 @@ module.exports = (function() {
 			//array, there are no pools in this set
 			if(buildings.length < 3) buildings = [];
 
-			//console.log(buildings);
-
 			tallest = 1;
 
 			//find the tallest building to the right, but stop at the
-			//building equal or greater than the the left most building
+			//building equal or greater than the left most building
 			for(i=2; i < buildings.length; i++) {
 				if(buildings[i] > buildings[tallest]) tallest = i;
 				if(buildings[i] >= buildings[0]) break;
