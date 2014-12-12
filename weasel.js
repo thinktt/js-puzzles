@@ -7,20 +7,5 @@ If any of the new strings has a perfect score (28), halt. Otherwise, take the hi
 */
 
 
-var baseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ ';
-
-getRandInt = function(min, max) {
-  return Math.floor(Math.random() * ((max + 1) - min)) + min;
-};
-
-var arr = [];
-var i =0; 
-var rand; 
-
-for(i=0; i<100; i++) {
-	rand = getRandInt(0,9);
-	
-}
-
-
-console.log(arr); 
+var baseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ ',
+		i=0;
