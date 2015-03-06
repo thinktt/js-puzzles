@@ -7,7 +7,7 @@ If any of the new strings has a perfect score (28), halt. Otherwise, take the hi
 */
 
 
-//.....Declirations and Intializers..........
+//.....Declarations and Intializers..........
 var BASE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ ',
 		target = 'METHINKS IT IS LIKE A WEASEL',
 		i, j,
